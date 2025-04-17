@@ -26,7 +26,6 @@ def test_get_number_of_options_valid(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: "5")
     assert make_a_choice.get_number_of_options() == 5
 
-
 def test_get_number_of_options_non_numerics(monkeypatch, capsys):
     inputs = iter(["abc", "u", "4"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
@@ -36,7 +35,6 @@ def test_get_number_of_options_non_numerics(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert "Kies een getal tussen 2 en 5" in captured.out
     assert result == 4
-
 
 def test_get_number_of_options_negative_numbers(monkeypatch, capsys):
     inputs = iter(["-5", "-1", "2"])
@@ -48,7 +46,6 @@ def test_get_number_of_options_negative_numbers(monkeypatch, capsys):
     assert "Kies een getal tussen 2 en 5" in captured.out
     assert result == 2
 
-
 def test_get_number_of_options_too_small_numbers(monkeypatch, capsys):
     inputs = iter(["0", "1", "3"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
@@ -58,7 +55,6 @@ def test_get_number_of_options_too_small_numbers(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert "Kies een getal tussen 2 en 5" in captured.out
     assert result == 3
-
 
 def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
     inputs = iter(["6", "10", "4"])
