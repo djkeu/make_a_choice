@@ -74,3 +74,13 @@ def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
 # get_user_options
 def test_get_user_options():
     ...
+
+
+"""
+- ToDo: test_get_user_options
+- ToDo: test_display_user_options
+- ToDo: test_determine_choice
+- ToDo: test_quit_program
+- ToDo: test_restart
+- ToDo: test_main
+"""
