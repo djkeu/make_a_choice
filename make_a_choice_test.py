@@ -76,7 +76,10 @@ def test_get_user_options():
     ...
 
 
+# Functions make_a_choice.py:
 """
+- display_welcome_message
+- get_number_of_options
 - ToDo: test_get_user_options
 - ToDo: test_display_user_options
 - ToDo: test_determine_choice
