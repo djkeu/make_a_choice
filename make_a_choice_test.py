@@ -3,17 +3,18 @@ import make_a_choice
 
 # display_welcome_message
 def test_display_welcome_message(capsys):
-    """Test printed result."""
+    """Make sure the welcome message is printed correctly."""
     make_a_choice.display_welcome_message()
     captured = capsys.readouterr()
     assert (
         "Kun je weer niet kiezen? "
-        "Laat dit programma "
+        "Laat dit programma die moeilijke keuze voor je maken."
     ) in captured.out
 
 
 # get_number_of_options
 def test_get_number_of_options_valid(monkeypatch):
+    """Make sure all valid number of options get the right result."""
     monkeypatch.setattr('builtins.input', lambda _: "2")
     assert make_a_choice.get_number_of_options() == 2
 
