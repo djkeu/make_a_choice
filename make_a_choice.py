@@ -31,7 +31,7 @@ def get_number_of_options():
 
 
 def get_user_options(num_options):
-    """Collect user options."""
+    """Make a list of the options presented by the user."""
     user_options = []
 
     i = 1
@@ -56,14 +56,14 @@ def get_user_options(num_options):
 
 
 def display_user_options(options_list):
-    """Display the entered options."""
+    """Display a list of the options presented by the user."""
     print("\nDe door u gekozen opties zijn:")
     for item in options_list:
         print(f"{options_list.index(item) + 1} - {item}")
 
 
 def determine_choice(options_list):
-    """Determine and display the final choice."""
+    """Present the user with the final choice."""
     throw = randint(2, 12)
     i = round((throw / 12) * (len(options_list) - 1))
 
@@ -76,7 +76,7 @@ def quit_program():
 
 
 def restart():
-    """Ask the user for a restart."""
+    """In case the user wants to try again."""
     prompt = input("Nog een keer proberen? (j/n) ")
 
     if prompt == 'j':
