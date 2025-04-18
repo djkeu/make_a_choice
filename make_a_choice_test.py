@@ -14,7 +14,7 @@ def test_display_welcome_message(capsys):
 
 # get_number_of_options
 def test_get_number_of_options_valid(monkeypatch):
-    """Make sure all valid number of options get the right result."""
+    """Make sure user can provide a number of options between 2 and 5."""
     monkeypatch.setattr('builtins.input', lambda _: "2")
     assert make_a_choice.get_number_of_options() == 2
 
