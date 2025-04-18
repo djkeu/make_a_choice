@@ -3,6 +3,7 @@
 
 ## ToDo Section
 - ToDo: readme.md
+- ToDo: translate prompts and prints into English
 
 
 ## Pytest
