@@ -62,8 +62,8 @@ def display_user_options(options_list):
         print(f"{options_list.index(item) + 1} - {item}")
 
 
-def determine_choice(options_list):
-    """Present the user with the final choice."""
+def throw_dice(options_list):
+    """Throw 2 six-sided dices to determine the final choice."""
     throw = randint(2, 12)
     i = round((throw / 12) * (len(options_list) - 1))
 
@@ -93,7 +93,7 @@ def main():
     user_options = get_user_options(num_options)
 
     display_user_options(user_options)
-    determine_choice(user_options)
+    throw_dice(user_options)
     restart()
 
 
