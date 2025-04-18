@@ -1,6 +1,11 @@
 # Make A Choice
 
 
+## Description
+Python program to help decide between various options presented by the user.\
+Also serves as an exercise in writing pytest tests.
+
+
 ## ToDo Section
 - ToDo: readme.md
 - ToDo: translate prompts and prints into English
