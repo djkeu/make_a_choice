@@ -9,8 +9,9 @@ Also serves as an exercise in writing pytest tests.
 ## ToDo Section
 - ToDo: readme.md
 - ToDo: translate prompts and prints into English
-- ToDo: explanatory docstrings to tests (explain why, not what)
-- ToDo: explanatory docstrings to functions (explain why, not what)
+- ToDo: explanatory docstrings (explain why, not what)
+    - ToDo: make_a_choice.py
+    - ToDo: make_a_choice_test.py
 
 
 ## Pytest
