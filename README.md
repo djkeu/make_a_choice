@@ -23,3 +23,5 @@ make_a_choice_test.py:
 ## Make a choice
 make_a_choice.py:
 
+- ToDo: restart():
+    - ToDo: get messages from text file
