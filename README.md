@@ -7,7 +7,7 @@
 
 
 ## Pytest
-make_a_choice.py
+make_a_choice_test.py:
 
 - Done: test_display_welcome_message
 - Done: test_get_number_of_options
