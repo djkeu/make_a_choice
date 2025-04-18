@@ -3,7 +3,7 @@ import sys
 
 
 def display_welcome_message():
-    """Display a friendly welcome message."""
+    """Greet the user with a friendly welcome message."""
     message = (
         "\nKun je weer niet kiezen? "
         "Laat dit programma die moeilijke keuze voor je maken."
