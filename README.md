@@ -9,6 +9,7 @@ Also serves as an exercise in writing pytest tests.
 ## ToDo Section
 - ToDo: readme.md
 - ToDo: translate prompts and prints into English
+- ToDo: explanatory docstrings to tests (explain why, not what)
 
 
 ## Pytest
