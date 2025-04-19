@@ -28,6 +28,7 @@ def test_get_number_of_options_valid(monkeypatch):
     assert make_a_choice.get_number_of_options() == 5
 
 def test_get_number_of_options_non_numerics(monkeypatch, capsys):
+    """Make sure only numbers are accepted as input."""
     inputs = iter(["abc", "u", "4"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
