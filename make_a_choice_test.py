@@ -81,6 +81,7 @@ def test_get_user_options():
     # ToDo: too few options given
     # ToDo: too many options given
 
+
 # Functions make_a_choice.py:
 """
 - display_welcome_message
