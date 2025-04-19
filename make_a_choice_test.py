@@ -1,7 +1,7 @@
 import make_a_choice
 
 
-# display_welcome_message
+# tests for display_welcome_message()
 def test_display_welcome_message(capsys):
     """Make sure the welcome message is printed correctly."""
     make_a_choice.display_welcome_message()
@@ -12,7 +12,7 @@ def test_display_welcome_message(capsys):
     ) in captured.out
 
 
-# get_number_of_options
+# tests for get_number_of_options()
 def test_get_number_of_options_valid(monkeypatch):
     """Make sure the number of options can be between 2 and 5."""
     monkeypatch.setattr('builtins.input', lambda _: "2")
@@ -72,7 +72,7 @@ def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
     assert result == 4
 
 
-# get_user_options
+# tests for get_user_options()
 def test_get_user_options():
     """Make sure user entered options are stored in a list."""
     ...
