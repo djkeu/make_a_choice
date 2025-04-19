@@ -76,8 +76,10 @@ def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
 def test_get_user_options():
     """Make sure user entered options are stored in a list."""
     ...
-    # ToDo: split into several tests
-
+    # ToDo: valid number of options given
+    # ToDo: no options given
+    # ToDo: too few options given
+    # ToDo: too many options given
 
 # Functions make_a_choice.py:
 """
