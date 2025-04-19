@@ -39,6 +39,7 @@ def test_get_number_of_options_non_numerics(monkeypatch, capsys):
     assert result == 4
 
 def test_get_number_of_options_negative_numbers(monkeypatch, capsys):
+    """Make sure negative numbers are rejected as input."""
     inputs = iter(["-5", "-1", "2"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
@@ -49,6 +50,7 @@ def test_get_number_of_options_negative_numbers(monkeypatch, capsys):
     assert result == 2
 
 def test_get_number_of_options_too_small_numbers(monkeypatch, capsys):
+    """Make sure numbers smaller than 2 are rejected."""
     inputs = iter(["0", "1", "3"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
@@ -59,6 +61,7 @@ def test_get_number_of_options_too_small_numbers(monkeypatch, capsys):
     assert result == 3
 
 def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
+    """Make sure numbers larger than 5 are rejected."""
     inputs = iter(["6", "10", "4"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
