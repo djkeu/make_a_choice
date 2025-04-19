@@ -79,7 +79,7 @@ def test_get_user_options():
     # ToDo: valid number of options given
     # ToDo: no options given
     # ToDo: too few options given
-    # ToDo: too many options given
+    # ToDo: too many options given: quit_program()
 
 
 # Functions make_a_choice.py:
