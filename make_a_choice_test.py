@@ -101,12 +101,16 @@ def test_get_user_options_valid_five(monkeypatch):
 
 def test_get_user_options_empty():
     """FixMe: Make sure user entered options are stored in a list."""
-    ...
+    pass
 
-    # Done: valid number of options given
-    # ToDo: no options given
-    # ToDo: too few options given
-    # Abandoned: too many options given: not possible
+
+"""
+ToDo: tests get_user_options
+    - Done: valid number of options given
+    - ToDo: no options given
+    - ToDo: too few options given
+    - Abandoned: too many options given: not possible
+"""
 
 
 # Functions make_a_choice.py:
