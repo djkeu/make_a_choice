@@ -99,8 +99,8 @@ def test_get_user_options_valid_five(monkeypatch):
     assert result == ["Eén", "Twee", "Drie", "Vier", "Vijf"]
 
 
-def test_get_user_options():
-    """Make sure user entered options are stored in a list."""
+def test_get_user_options_empty():
+    """FixMe: Make sure user entered options are stored in a list."""
     ...
 
     # Done: valid number of options given
