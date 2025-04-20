@@ -27,6 +27,7 @@ def test_get_number_of_options_valid(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: "5")
     assert make_a_choice.get_number_of_options() == 5
 
+
 def test_get_number_of_options_non_numerics(monkeypatch, capsys):
     """Make sure only numbers are accepted as input."""
     inputs = iter(["abc", "u", "4"])
@@ -37,6 +38,7 @@ def test_get_number_of_options_non_numerics(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert "Kies een getal tussen 2 en 5" in captured.out
     assert result == 4
+
 
 def test_get_number_of_options_negative_numbers(monkeypatch, capsys):
     """Make sure negative numbers are rejected as input."""
@@ -49,6 +51,7 @@ def test_get_number_of_options_negative_numbers(monkeypatch, capsys):
     assert "Kies een getal tussen 2 en 5" in captured.out
     assert result == 2
 
+
 def test_get_number_of_options_too_small_numbers(monkeypatch, capsys):
     """Make sure numbers smaller than 2 are rejected."""
     inputs = iter(["0", "1", "3"])
@@ -59,6 +62,7 @@ def test_get_number_of_options_too_small_numbers(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert "Kies een getal tussen 2 en 5" in captured.out
     assert result == 3
+
 
 def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
     """Make sure numbers larger than 5 are rejected."""
@@ -73,13 +77,34 @@ def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
 
 
 # tests for get_user_options()
+def test_get_user_options_valid_two(monkeypatch):
+    """Make sure two valid options are stored in a list."""
+    inputs = iter(["Eerste optie", "Tweede optie"])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    result = make_a_choice.get_user_options(2)
+    assert result == ["Eerste optie", "Tweede optie"]
+
+
+def test_get_user_options_valid_five(monkeypatch):
+    """Make sure five valid options are stored in a list."""
+    inputs = iter(
+        ["Eén", "Twee", "Drie", "Vier", "Vijf"]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    result = make_a_choice.get_user_options(5)
+    assert result == ["Eén", "Twee", "Drie", "Vier", "Vijf"]
+
+
 def test_get_user_options():
     """Make sure user entered options are stored in a list."""
     ...
-    # ToDo: valid number of options given
+
+    # Done: valid number of options given
     # ToDo: no options given
     # ToDo: too few options given
-    # ToDo: too many options given: quit_program()
+    # Abandoned: too many options given: not possible
 
 
 # Functions make_a_choice.py:
