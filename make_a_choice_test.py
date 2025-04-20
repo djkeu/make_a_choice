@@ -79,7 +79,9 @@ def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
 # tests for get_user_options()
 def test_get_user_options_valid_two(monkeypatch):
     """Make sure two valid options are stored in a list."""
-    inputs = iter(["Eerste optie", "Tweede optie"])
+    inputs = iter(
+        ["Eerste optie", "Tweede optie"]
+    )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     result = make_a_choice.get_user_options(2)
