@@ -77,24 +77,34 @@ def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
 
 
 # tests for get_user_options()
-def test_get_user_options_valid_two(monkeypatch):
-    """Verify two valid options are collected and returned as a list."""
+def test_get_user_options_two_strings(monkeypatch):
+    """Verify two strings are collected and returned as a list of strings."""
     inputs = iter(
-        ["Eerste optie", "Tweede optie"]
+        ["Aap", "Noot"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
     result = make_a_choice.get_user_options(2)
-    assert result == ["Eerste optie", "Tweede optie"]
+    assert result == ["Aap", "Noot"]
 
 
-def test_get_user_options_valid_five(monkeypatch):
-    """Verify five valid options are collected and returned as a list."""
+def test_get_user_options_four_numbers(monkeypatch):
+    """Verify four numbers are collected and returned as a list of numbers."""
     inputs = iter(
-        ["Eén", "Twee", "Drie", "Vier", "Vijf"]
+        [1, 2, 3, 4]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    result = make_a_choice.get_user_options(4)
+    assert result == [1, 2, 3, 4]
+
+
+def test_get_user_options_strings_and_numbers(monkeypatch):
+    """Verify numbers and strings are collected and returned as a list."""
+    inputs = iter(
+        [1, "noot", "mies", 4, "zus"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
     result = make_a_choice.get_user_options(5)
-    assert result == ["Eén", "Twee", "Drie", "Vier", "Vijf"]
+    assert result == [1, "noot", "mies", 4, "zus"]
 
 
 def test_get_user_options_empty():
