@@ -83,7 +83,6 @@ def test_get_user_options_valid_two(monkeypatch):
         ["Eerste optie", "Tweede optie"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-
     result = make_a_choice.get_user_options(2)
     assert result == ["Eerste optie", "Tweede optie"]
 
@@ -94,7 +93,6 @@ def test_get_user_options_valid_five(monkeypatch):
         ["Eén", "Twee", "Drie", "Vier", "Vijf"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-
     result = make_a_choice.get_user_options(5)
     assert result == ["Eén", "Twee", "Drie", "Vier", "Vijf"]
 
