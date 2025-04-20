@@ -109,7 +109,8 @@ ToDo: tests get_user_options
     - Done: valid number of options given
     - ToDo: no options given
     - ToDo: too few options given (< 2)
-    - ToDo: less than entered options given (1 of 3, 2 of 5, 3 of 5)
+    - ToDo: less than entered options given (2 of 3, 2 of 5, 3 of 5)
+    - ToDo: early quit (option: 's')
     - Abandoned: too many options given: not possible
 """
 
