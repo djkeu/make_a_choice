@@ -251,6 +251,20 @@ def test_display_user_options_numbers(capsys):
     assert "3 - 30" in captured.out
 
 
+def test_display_user_options_mixed(capsys):
+    """Verify a list of strings and numbers is printed correctly."""
+    options = ["Aap", 20, "Mies", 40, "Zus"]
+    make_a_choice.display_user_options(options)
+
+    captured = capsys.readouterr()
+    assert "\nDe door u gekozen opties zijn:" in captured.out
+    assert "1 - Aap" in captured.out
+    assert "20" in captured.out
+    assert "3 - Mies" in captured.out
+    assert "40" in captured.out
+    assert "5 - Zus" in captured.out
+
+
 """
 ToDo: tests display_user_options
     - ToDo: "\nDe door u gekozen opties zijn:"
