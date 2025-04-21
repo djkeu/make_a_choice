@@ -229,8 +229,15 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
         make_a_choice.get_user_options(5)
 
 
-def test_display_user_options():
-    pass
+def test_display_user_options_strings(capsys):
+    """Verify that the heading is printed correctly."""
+    options = ["Aap", "Noot", "Mies"]
+    make_a_choice.display_user_options(options)
+
+    captured = capsys.readouterr()
+    assert "De door u" in captured.out
+    assert "1 - Aap" in captured.out
+    assert "3 - Mies" in captured.out
 
 
 """
