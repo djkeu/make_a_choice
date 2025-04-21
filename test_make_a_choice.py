@@ -276,6 +276,35 @@ def test_throw_dice_heading(capsys):
     assert "\nHet wordt: " in captured.out
 
 
+def test_throw_dice_two_strings(capsys):
+    """Verify one random option of two strings is displayed."""
+    options = ["Aap", "Noot"]
+    make_a_choice.throw_dice(options)
+
+    captured = capsys.readouterr()
+    assert (
+        options[0] in captured.out or
+        options[1] in captured.out    
+    )
+    assert not (
+        options[0] in captured.out and
+        options[1] in captured.out    
+    )
+    assert (
+        "Aap" in captured.out or
+        "Noot" in captured.out
+    )
+    assert not (
+        "Aap" in captured.out and
+        "Noot" in captured.out
+    )
+
+    # FixMe:
+    assert sum(options[0], options[1]) == 1
+
+    # FixMe: use sum(conditions) == 1 to check only one condition is true
+
+
 """
 ToDo: tests throw_dice
     - ToDo: "\nHet wordt: "
