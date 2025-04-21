@@ -23,8 +23,8 @@ make_a_choice_test.py:
 - Done: test_display_welcome_message
 - Done: test_get_number_of_options
 - Done: test_get_user_options
+- Done: test_display_user_options
 
-- ToDo: test_display_user_options
 - ToDo: test_throw_dice
 - ToDo: test_quit_program
 - ToDo: test_restart
