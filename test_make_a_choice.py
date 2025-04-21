@@ -230,9 +230,7 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
 
 
 """
-ToDo: tests get_user_options
-    - ToDo: check for abundant tests
-
+Done: tests get_user_options
     - Done: valid number of options
     - Done: first empty option
     - Done: second empty option
