@@ -266,6 +266,8 @@ def test_display_user_options_mixed(capsys):
     assert "5 - Zus" in captured.out
 
 
+# tests for throw_dice
+
 """
 ToDo: tests throw_dice
     - ToDo: "\nHet wordt: "
