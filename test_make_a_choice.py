@@ -195,6 +195,12 @@ def test_get_user_options_three_of_five(monkeypatch):
     assert result == ["Aap", "Noot", "Mies"]
 
 
+def test_get_user_options_early_quit(monkeypatch, capsys):
+    """Verify program stops after the input of 's'."""
+    pass
+
+
+
 """
 ToDo: tests get_user_options
     - Done: valid number of options
