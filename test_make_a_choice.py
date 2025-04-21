@@ -195,10 +195,14 @@ def test_get_user_options_three_of_five(monkeypatch):
     assert result == ["Aap", "Noot", "Mies"]
 
 
-def test_get_user_options_early_quit(monkeypatch, capsys):
-    """Verify program stops after the input of 's'."""
-    pass
+def test_get_user_options_early_quit_first_input(monkeypatch, capsys):
+    """Verify program stops when first input is 's'."""
+    monkeypatch.setattr('builtins.input', lambda _: "s")
 
+    with pytest.raises(SystemExit):
+        make_a_choice.get_user_options(5)
+
+    # Note: no assertion! that's done in test_quit_program()
 
 
 """
@@ -208,6 +212,9 @@ ToDo: tests get_user_options
     - Done: second empty option
     - Done: less than entered options (2 of 3, 2 of 5, 3 of 5)
     - ToDo: early quit (option: 's')
+        - ToDo: 's' as first input
+        - ToDo: 's' as second input
+        - ToDo: 's' as fifth input
     - Abandoned: too many options given: not possible
 """
 
