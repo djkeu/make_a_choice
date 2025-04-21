@@ -229,6 +229,7 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
         make_a_choice.get_user_options(5)
 
 
+# tests for display_user_options
 def test_display_user_options_strings(capsys):
     """Verify a list of strings is printed correctly."""
     options = ["Aap", "Noot", "Mies"]
