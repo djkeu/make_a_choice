@@ -231,7 +231,7 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
 
 # tests for display_user_options
 def test_display_user_options_strings(capsys):
-    """Verify a list of strings is printed correctly."""
+    """Verify a list of strings is displayed correctly."""
     options = ["Aap", "Noot", "Mies"]
     make_a_choice.display_user_options(options)
 
@@ -242,7 +242,7 @@ def test_display_user_options_strings(capsys):
 
 
 def test_display_user_options_numbers(capsys):
-    """Verify a list of numbers is printed correctly."""
+    """Verify a list of numbers is displayed correctly."""
     options = [10, 20, 30]
     make_a_choice.display_user_options(options)
 
@@ -253,7 +253,7 @@ def test_display_user_options_numbers(capsys):
 
 
 def test_display_user_options_mixed(capsys):
-    """Verify a list of strings and numbers is printed correctly."""
+    """Verify a list of strings and numbers is displayed correctly."""
     options = ["Aap", 20, "Mies", 40, "Zus"]
     make_a_choice.display_user_options(options)
 
@@ -267,8 +267,13 @@ def test_display_user_options_mixed(capsys):
 
 
 # tests for throw_dice
-def test_throw_dice():
-    pass
+def test_throw_dice_heading(capsys):
+    """Verify heading is displayed."""
+    options = ["Aap", "Noot"]
+    make_a_choice.throw_dice(options)
+
+    captured = capsys.readouterr()
+    assert "\nHet wordt: " in captured.out
 
 
 """
