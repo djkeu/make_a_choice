@@ -230,6 +230,11 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
 
 
 """
+ToDo: tests display_user_options
+    - ToDo: print De door u gekozen mogelijkheden..
+    - ToDo: index + 1
+    - ToDo: a or b or c
+
 Done: tests get_user_options
     - Done: valid number of options
     - Done: first empty option
@@ -247,10 +252,10 @@ Done: tests get_user_options
 """
 - display_welcome_message
 - get_number_of_options
-- test_get_user_options
-- ToDo: test_display_user_options
-- ToDo: test_determine_choice
-- ToDo: test_quit_program
-- ToDo: test_restart
-- ToDo: test_main
+- get_user_options
+- ToDo: display_user_options
+- ToDo: determine_choice
+- ToDo: quit_program
+- ToDo: restart
+- ToDo: main
 """
