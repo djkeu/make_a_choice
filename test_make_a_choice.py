@@ -149,7 +149,7 @@ def test_get_user_options_empty_second(monkeypatch, capsys):
 
 
 def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
-    """."""
+    """Verify empty inputs get rejected."""
     inputs = iter(
         ["Aap", "", "", "Noot", "Mies"]
     )
