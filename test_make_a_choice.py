@@ -163,7 +163,7 @@ def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
 
 
 def test_get_user_options_two_of_three(monkeypatch):
-    """Verify only two three appointed inputs are accepted."""
+    """Verify function stops when 2 of 3 inputs exist."""
     inputs = iter(
         ["Aap", "Noot", ""]
     )
@@ -174,7 +174,7 @@ def test_get_user_options_two_of_three(monkeypatch):
 
 
 def test_get_user_options_two_of_five(monkeypatch):
-    """Verify only two of five appointed options are accepted."""
+    """Verify function stops after empty input when 2 of 5 options exist."""
     inputs = iter(
         ["Aap", "", "Mies", ""]
     )
@@ -184,12 +184,23 @@ def test_get_user_options_two_of_five(monkeypatch):
     assert result == ["Aap", "Mies"]
 
 
+def test_get_user_options_three_of_five(monkeypatch):
+    """Verify function stops after empty input when 3 of 5 options exist."""
+    inputs = iter(
+        ["", "Aap", "", "", "Noot", "Mies", ""]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    result = make_a_choice.get_user_options(5)
+    assert result == ["Aap", "Noot", "Mies"]
+
+
 """
 ToDo: tests get_user_options
     - Done: valid number of options
     - Done: first empty option
     - Done: second empty option
-    - ToDo: less than entered options (2 of 3, 2 of 5, 3 of 5)
+    - Done: less than entered options (2 of 3, 2 of 5, 3 of 5)
     - ToDo: early quit (option: 's')
     - Abandoned: too many options given: not possible
 """
