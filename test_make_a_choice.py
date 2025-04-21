@@ -205,10 +205,21 @@ def test_get_user_options_early_quit_first_input(monkeypatch, capsys):
     # Note: no assertion! that's done in test_quit_program()
 
 
-def test_get_user_options_early_quit_after_inputs(monkeypatch, capsys):
-    """Verify program stops when subsequent input is 's'."""
+def test_get_user_options_early_quit_third_input(monkeypatch, capsys):
+    """Verify program stops when third input is 's'."""
     inputs = iter(
         ["Aap", "Noot", "s"]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    with pytest.raises(SystemExit):
+        make_a_choice.get_user_options(5)
+
+
+def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
+    """Verify program stops when fifth input is 's'."""
+    inputs = iter(
+        ["Aap", "", "Noot", "Mies", "Wim", "s"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
