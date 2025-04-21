@@ -162,12 +162,22 @@ def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
     assert "Noem minstens" in captured.out
 
 
+def test_get_user_options_two_of_three(monkeypatch, capsys):
+    """Verify fewer inputs are accepted."""
+    inputs = iter(
+        ["Aap", "Noot", ""]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    result = make_a_choice.get_user_options(3)
+    assert result == ["Aap", "Noot"]
+
+
 """
 ToDo: tests get_user_options
     - Done: valid number of options
     - Done: first empty option
     - Done: second empty option
-    - ToDo: too few options (< 2)
     - ToDo: less than entered options (2 of 3, 2 of 5, 3 of 5)
     - ToDo: early quit (option: 's')
     - Abandoned: too many options given: not possible
