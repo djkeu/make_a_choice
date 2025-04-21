@@ -234,17 +234,6 @@ ToDo: tests display_user_options
     - ToDo: print De door u gekozen mogelijkheden..
     - ToDo: index + 1
     - ToDo: a or b or c
-
-Done: tests get_user_options
-    - Done: valid number of options
-    - Done: first empty option
-    - Done: second empty option
-    - Done: less than entered options (2 of 3, 2 of 5, 3 of 5)
-    - Done: early quit (option: 's')
-        - Done: 's' as first input
-        - Done: 's' as third input
-        - Done: 's' as fifth input
-    - Abandoned: too many options given: not possible
 """
 
 
