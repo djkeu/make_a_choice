@@ -259,9 +259,9 @@ def test_display_user_options_mixed(capsys):
     captured = capsys.readouterr()
     assert "\nDe door u gekozen opties zijn:" in captured.out
     assert "1 - Aap" in captured.out
-    assert "20" in captured.out
+    assert "2 - 20" in captured.out
     assert "3 - Mies" in captured.out
-    assert "40" in captured.out
+    assert "4 - 40" in captured.out
     assert "5 - Zus" in captured.out
 
 
