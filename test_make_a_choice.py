@@ -229,6 +229,10 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
         make_a_choice.get_user_options(5)
 
 
+def test_display_user_options():
+    pass
+
+
 """
 ToDo: tests display_user_options
     - ToDo: print De door u gekozen mogelijkheden..
