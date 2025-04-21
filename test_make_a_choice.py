@@ -1,3 +1,4 @@
+import pytest
 import make_a_choice
 
 
@@ -107,9 +108,17 @@ def test_get_user_options_strings_and_numbers(monkeypatch):
     assert result == [1, "noot", "mies", 4, "zus"]
 
 
-def test_get_user_options_empty():
-    """FixMe: docstring."""
-    pass
+def test_get_user_options_empty_first(monkeypatch, capsys):
+    """Verify empty first input gets rejected."""
+    inputs = iter(
+        ["", "s"]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    with pytest.raises(SystemExit):
+        make_a_choice.get_user_options(5)
+
+    captured = capsys.readouterr()
+    assert "Noem minstens " in captured.out
 
 
 """
