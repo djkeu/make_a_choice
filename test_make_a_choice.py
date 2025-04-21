@@ -121,6 +121,19 @@ def test_get_user_options_empty_first(monkeypatch, capsys):
     assert "Noem minstens " in captured.out
 
 
+def test_get_user_options_empty_second(monkeypatch, capsys):
+    """Verify empty second input gets rejected."""
+    inputs = iter(
+        ["4", "", "s"]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    with pytest.raises(SystemExit):
+        make_a_choice.get_user_options(5)
+
+    captured = capsys.readouterr()
+    assert "Noem minstens twee opties" in captured.out
+
+
 """
 ToDo: tests get_user_options
     - Done: valid number of options given
