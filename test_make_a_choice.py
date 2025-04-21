@@ -121,6 +121,17 @@ def test_get_user_options_empty_first(monkeypatch, capsys):
     assert "Noem minstens " in captured.out
 
 
+def test_get_user_options_empty_first_valid_later(monkeypatch, capsys):
+    """Verify empty inputs are rejected."""
+    inputs = iter(
+        ["", "", "Aap", "Noot"]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    result = make_a_choice.get_user_options(2)
+    assert result == ["Aap", "Noot"]
+
+
 def test_get_user_options_empty_second(monkeypatch, capsys):
     """Verify empty second input gets rejected."""
     inputs = iter(
