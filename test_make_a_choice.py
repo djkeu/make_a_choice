@@ -267,6 +267,9 @@ def test_display_user_options_mixed(capsys):
 
 
 # tests for throw_dice
+def test_throw_dice():
+    pass
+
 
 """
 ToDo: tests throw_dice
