@@ -162,8 +162,8 @@ def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
     assert "Noem minstens" in captured.out
 
 
-def test_get_user_options_two_of_three(monkeypatch, capsys):
-    """Verify fewer inputs are accepted."""
+def test_get_user_options_two_of_three(monkeypatch):
+    """Verify only two three appointed inputs are accepted."""
     inputs = iter(
         ["Aap", "Noot", ""]
     )
@@ -171,6 +171,17 @@ def test_get_user_options_two_of_three(monkeypatch, capsys):
 
     result = make_a_choice.get_user_options(3)
     assert result == ["Aap", "Noot"]
+
+
+def test_get_user_options_two_of_five(monkeypatch):
+    """Verify only two of five appointed options are accepted."""
+    inputs = iter(
+        ["Aap", "", "Mies", ""]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    result = make_a_choice.get_user_options(5)
+    assert result == ["Aap", "Mies"]
 
 
 """
