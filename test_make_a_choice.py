@@ -229,23 +229,25 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
 
 """
 ToDo: tests get_user_options
+    - ToDo: check for abundant tests
+
     - Done: valid number of options
     - Done: first empty option
     - Done: second empty option
     - Done: less than entered options (2 of 3, 2 of 5, 3 of 5)
-    - ToDo: early quit (option: 's')
-        - ToDo: 's' as first input
-        - ToDo: 's' as second input
-        - ToDo: 's' as fifth input
+    - Done: early quit (option: 's')
+        - Done: 's' as first input
+        - Done: 's' as third input
+        - Done: 's' as fifth input
     - Abandoned: too many options given: not possible
 """
 
 
 # Functions to test in make_a_choice.py:
 """
-- Done: display_welcome_message
-- Done: get_number_of_options
-- ToDo: test_get_user_options
+- display_welcome_message
+- get_number_of_options
+- test_get_user_options
 - ToDo: test_display_user_options
 - ToDo: test_determine_choice
 - ToDo: test_quit_program
