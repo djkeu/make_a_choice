@@ -129,8 +129,8 @@ def test_get_user_options_empty_first_valid_later(monkeypatch, capsys):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     result = make_a_choice.get_user_options(2)
-
     captured = capsys.readouterr()
+
     assert "Noem minstens twee opties" in captured.out
     assert result == ["Aap", "Noot"]
 
@@ -150,7 +150,16 @@ def test_get_user_options_empty_second(monkeypatch, capsys):
 
 def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
     """."""
-    pass
+    inputs = iter(
+        ["Aap", "", "", "Noot", "Mies"]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    result = make_a_choice.get_user_options(3)
+    captured = capsys.readouterr()
+
+    assert result == ["Aap", "Noot", "Mies"]
+    assert "Noem minstens" in captured.out
 
 
 """
