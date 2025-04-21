@@ -235,9 +235,11 @@ def test_display_user_options():
 
 """
 ToDo: tests display_user_options
-    - ToDo: print De door u gekozen mogelijkheden..
+    - ToDo: "\nDe door u gekozen opties zijn:"
     - ToDo: index + 1
-    - ToDo: a or b or c
+    - ToDo: 10, 20
+    - ToDo: aap, noot, mies
+    - ToDo: 1 - Aap, etc.
 """
 
 
