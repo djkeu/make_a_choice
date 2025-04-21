@@ -25,7 +25,7 @@ make_a_choice_test.py:
 - Done: test_get_user_options
 
 - ToDo: test_display_user_options
-- ToDo: test_determine_choice
+- ToDo: test_throw_dice
 - ToDo: test_quit_program
 - ToDo: test_restart
 - ToDo: test_main

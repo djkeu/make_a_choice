@@ -247,7 +247,7 @@ ToDo: tests display_user_options
 - get_number_of_options
 - get_user_options
 - ToDo: display_user_options
-- ToDo: determine_choice
+- ToDo: throw_dice
 - ToDo: quit_program
 - ToDo: restart
 - ToDo: main
