@@ -145,10 +145,15 @@ def test_get_user_options_empty_second(monkeypatch, capsys):
     assert "Noem minstens twee opties" in captured.out
 
 
+def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
+    """."""
+    pass
+
+
 """
 ToDo: tests get_user_options
     - Done: valid number of options given
-    - ToDo: no options given
+    - Done: no options given
     - ToDo: too few options given (< 2)
     - ToDo: less than entered options given (2 of 3, 2 of 5, 3 of 5)
     - ToDo: early quit (option: 's')
