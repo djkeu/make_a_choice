@@ -266,12 +266,9 @@ def test_display_user_options_mixed(capsys):
 
 
 """
-ToDo: tests display_user_options
-    - ToDo: "\nDe door u gekozen opties zijn:"
-    - ToDo: index + 1
-    - ToDo: 10, 20
-    - ToDo: aap, noot, mies
-    - ToDo: 1 - Aap, etc.
+ToDo: tests throw_dice
+    - ToDo: "\nHet wordt: "
+    - ToDo: list[0] or list[1] or list[x]
 """
 
 
@@ -280,7 +277,7 @@ ToDo: tests display_user_options
 - display_welcome_message
 - get_number_of_options
 - get_user_options
-- ToDo: display_user_options
+- display_user_options
 - ToDo: throw_dice
 - ToDo: quit_program
 - ToDo: restart
