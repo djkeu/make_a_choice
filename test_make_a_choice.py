@@ -322,7 +322,7 @@ ToDo: get_number_of_options()
     - ToDo: 's': quit_program()
 
 ToDo: test restart()
-    - ToDo: test_restart_yes()
+    - Done: test_restart_yes()
     - ToDo: test_restart_no()
 
 ToDo: test main()
