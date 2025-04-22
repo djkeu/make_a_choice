@@ -348,10 +348,6 @@ def test_no_restart_number(monkeypatch):
 
 
 """
-ToDo: test restart()
-    - Done: test_restart_yes()
-    - ToDo: test_restart_no()
-
 ToDo: test main()
 """
 
