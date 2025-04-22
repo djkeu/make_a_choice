@@ -11,17 +11,10 @@ Also serves as an exercise in writing pytest tests.
 - ToDo: translate prompts and prints into English
 
 - ToDo: docstrings (explain why, not what)
-    - Done: make_a_choice.py
-    - ToDo: test_make_a_choice.py
-        - Done: test_display_welcome_message
-        - Done: test_get_number_of_options
-        - Done: test_get_user_options
-        - Done: test_display_user_options
-        - Done: test_throw_dice
-        - Done: test_quit_program
-        - Done: test_restart
+    - FixMe: Fix if needed
 
-        - ToDo: test_main
+- Abandoned: restart():
+    - Abandoned: get messages from text file
 
 
 ## Pytest
@@ -29,10 +22,10 @@ test_make_a_choice.py:
 
 ```
 $ pytest --collect-only -q
-
 test_make_a_choice.py::test_display_welcome_message
 
 test_make_a_choice.py::test_get_number_of_options_valid
+test_make_a_choice.py::test_get_number_of_options_early_exit
 test_make_a_choice.py::test_get_number_of_options_non_numerics
 test_make_a_choice.py::test_get_number_of_options_negative_numbers
 test_make_a_choice.py::test_get_number_of_options_too_small_numbers
@@ -63,11 +56,15 @@ test_make_a_choice.py::test_throw_dice_lead
 test_make_a_choice.py::test_throw_dice_options_strings_and_numbers
 
 test_make_a_choice.py::test_quit_program
+
+test_make_a_choice.py::test_restart_yes
+test_make_a_choice.py::test_no_restart_char
+test_make_a_choice.py::test_no_restart_string
+test_make_a_choice.py::test_no_restart_number
+
+test_make_a_choice.py::test_main_happy_path
+test_make_a_choice.py::test_main_early_exit
+
+32 tests collected in 0.01s
+
 ```
-
-
-## Make a choice
-make_a_choice.py:
-
-- ToDo: restart():
-    - ToDo: get messages from text file
