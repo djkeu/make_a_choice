@@ -290,6 +290,11 @@ def test_throw_dice_options_strings_and_numbers(capsys):
     assert counter == 1
 
 
+# tests for quit_program
+def test_quit_program():
+    pass
+
+
 """
 ToDo: test quit_program
 """
