@@ -203,8 +203,10 @@ def test_get_user_options_early_quit_first_input(monkeypatch, capsys):
     """Verify program stops when first input is 's'."""
     monkeypatch.setattr('builtins.input', lambda _: "s")
 
-    with pytest.raises(SystemExit):
+    with pytest.raises(SystemExit) as e:
         mc.get_user_options(5)
+
+    assert "Laters" in str(e.value)
 
 
 def test_get_user_options_early_quit_third_input(monkeypatch, capsys):
