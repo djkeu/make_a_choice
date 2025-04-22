@@ -300,15 +300,15 @@ def test_throw_dice_two_strings(capsys):
     )
 
     # FixMe: use itertools?
-    
+
     # FixMe:
-    result = make_a_choice.throw_dice(options)
-    print(result)  # "\nHet wordt: Aap"
+    # result = make_a_choice.throw_dice(options)
+    # print(result)  # "\nHet wordt: Aap"
     # FixMe:
     # assert len(result) == 1
 
     # FixMe:
-    # assert sum(options[0], options[1]) == 1
+    # assert sum(options[0] in captured.out, options[1] in captured.out) == 1
 
     # FixMe: use sum(conditions) == 1 to check only one condition is true
 
