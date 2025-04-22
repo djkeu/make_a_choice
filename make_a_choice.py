@@ -12,7 +12,7 @@ def display_welcome_message():
 
 
 def get_number_of_options():
-    """Prompt user for the number of options to choose from."""
+    """Prompt user for the number of options to choose from (2 to 5)."""
     err = "Kies een getal tussen 2 en 5."
 
     while True:
