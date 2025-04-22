@@ -299,9 +299,17 @@ def test_quit_program(capsys):
     assert "Laters!" in str(e.value)
 
 
-def test_restart_yes():
+def test_restart_yes(monkeypatch, capsys):
     """Verify the program is restarted after input of 'j'."""
-    pass
+    inputs = iter(
+        ['j', 's']
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    with pytest.raises(SystemExit):
+        make_a_choice.restart()
+
+    captured = capsys.readouterr()
+    assert "Kun je weer niet kiezen" in captured.out
 
 
 def test_restart_no():
@@ -310,6 +318,9 @@ def test_restart_no():
 
 
 """
+ToDo: get_number_of_options()
+    - ToDo: 's': quit_program()
+
 ToDo: test restart()
     - ToDo: test_restart_yes()
     - ToDo: test_restart_no()
