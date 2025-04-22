@@ -16,10 +16,13 @@ def get_number_of_options():
     err = "Kies een getal tussen 2 en 5."
 
     while True:
+        num_options = input(
+            "Hoeveel opties wil je vergelijken? (max 5): "
+        )
+        if num_options == 's':
+            quit_program()
         try:
-            num_options = int(input(
-                "Hoeveel opties wil je vergelijken? (max 5): "
-            ))
+            num_options = int(num_options)
 
             if 1 < num_options <= 5:
                 return num_options
