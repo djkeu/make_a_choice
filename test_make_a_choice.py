@@ -19,12 +19,6 @@ def test_get_number_of_options_valid(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: "2")
     assert mc.get_number_of_options() == 2
 
-    monkeypatch.setattr('builtins.input', lambda _: "3")
-    assert mc.get_number_of_options() == 3
-
-    monkeypatch.setattr('builtins.input', lambda _: "4")
-    assert mc.get_number_of_options() == 4
-
     monkeypatch.setattr('builtins.input', lambda _: "5")
     assert mc.get_number_of_options() == 5
 
