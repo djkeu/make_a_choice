@@ -269,7 +269,7 @@ def test_display_user_options_strings_and_numbers(capsys):
 
 
 # tests for throw_dice()
-def test_throw_dice_lead(capsys):
+def test_throw_dice_leading_text(capsys):
     """Verify leading text is displayed."""
     options = ["Aap", 2, "Mies"]
     mc.throw_dice(options)
