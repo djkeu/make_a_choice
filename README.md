@@ -2,26 +2,23 @@
 
 
 ## Description
-Python program to help decide between various options presented by the user.\
-Also serves as an exercise in writing pytest tests.
+Originally intended as a small Python program to help decide between various options. Gradually became more of an exercise in testing with Pytest.
 
 
 ## ToDo Section
-- ToDo: readme.md
-- ToDo: translate prompts and prints into English
-
-- ToDo: docstrings (explain why, not what)
-    - FixMe: Fix if needed
-
-- Abandoned: restart():
-    - Abandoned: get messages from text file
+- FixMe: Fix docstrings if needed (explain why, not what)
+- Abandoned: translate prompts and prints into English
+- Abandoned: restart(): get messages from text file
 
 
 ## Pytest
-test_make_a_choice.py:
+Pytest test file: test_make_a_choice.py
 
+
+### All tests
 ```
 $ pytest --collect-only -q
+
 test_make_a_choice.py::test_display_welcome_message
 
 test_make_a_choice.py::test_get_number_of_options_valid
