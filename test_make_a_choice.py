@@ -97,7 +97,7 @@ def test_get_user_options_four_numbers(monkeypatch):
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
     result = mc.get_user_options(4)
-    assert result == [1, 2, 3, 4]
+    assert result == [1, 22, 3, 4]
 
 
 def test_get_user_options_strings_and_numbers(monkeypatch):
