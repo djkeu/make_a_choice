@@ -237,7 +237,7 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
         make_a_choice.get_user_options(5)
 
 
-# tests for display_user_options
+# tests for display_user_options()
 def test_display_user_options_strings(capsys):
     """Verify a list of strings is displayed correctly."""
     options = ["Aap", "Noot", "Mies"]
@@ -274,7 +274,7 @@ def test_display_user_options_strings_and_numbers(capsys):
     assert "5 - Zus" in captured.out
 
 
-# tests for throw_dice
+# tests for throw_dice()
 def test_throw_dice_lead(capsys):
     """Verify leading text is displayed."""
     options = ["Aap", 2, "Mies"]
@@ -298,7 +298,7 @@ def test_throw_dice_options_strings_and_numbers(capsys):
     assert counter == 1
 
 
-# tests for quit_program
+# tests for quit_program()
 def test_quit_program(capsys):
     """Verify the program exits with a friendly message."""
     with pytest.raises(SystemExit) as e:
@@ -307,6 +307,7 @@ def test_quit_program(capsys):
     assert "Laters!" in str(e.value)
 
 
+# tests for restart()
 def test_restart_yes(monkeypatch, capsys):
     """Verify the program is restarted after input of 'j'."""
     inputs = iter(
@@ -346,6 +347,7 @@ def test_no_restart_number(monkeypatch):
         make_a_choice.restart()
 
 
+# tests for main()
 def test_main_happy_path(capsys, monkeypatch):
     """Verify main() runs the full workflow with expected output."""
     inputs = iter(
