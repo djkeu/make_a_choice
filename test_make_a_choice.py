@@ -29,6 +29,14 @@ def test_get_number_of_options_valid(monkeypatch):
     assert make_a_choice.get_number_of_options() == 5
 
 
+def test_get_number_of_options_early_exit(monkeypatch):
+    """Verify the program exits after input of 's'."""
+    monkeypatch.setattr('builtins.input', lambda _: 's')
+
+    with pytest.raises(SystemExit):
+        make_a_choice.get_number_of_options()
+
+
 def test_get_number_of_options_non_numerics(monkeypatch, capsys):
     """Verify only numbers are accepted as input."""
     inputs = iter(["abc", "u", "4"])
@@ -305,6 +313,7 @@ def test_restart_yes(monkeypatch, capsys):
         ['j', 's']
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
     with pytest.raises(SystemExit):
         make_a_choice.restart()
 
@@ -314,11 +323,6 @@ def test_restart_yes(monkeypatch, capsys):
 
 def test_restart_no():
     """Verify the program exits after input is not 'j'."""
-    pass
-
-
-def test_get_number_of_options_early_exit():
-    """Verify the program exits after input of 's'."""
     pass
 
 
