@@ -199,7 +199,7 @@ def test_get_user_options_three_of_five(monkeypatch):
     assert result == ["Aap", "Noot", "Mies"]
 
 
-def test_get_user_options_early_quit_first_input(monkeypatch, capsys):
+def test_get_user_options_early_quit_first_input(monkeypatch):
     """Verify program stops when first input is 's'."""
     monkeypatch.setattr('builtins.input', lambda _: "s")
 
@@ -209,7 +209,7 @@ def test_get_user_options_early_quit_first_input(monkeypatch, capsys):
     assert "Laters" in str(e.value)
 
 
-def test_get_user_options_early_quit_third_input(monkeypatch, capsys):
+def test_get_user_options_early_quit_third_input(monkeypatch):
     """Verify program stops when third input is 's'."""
     inputs = iter(
         ["Aap", "Noot", "s"]
@@ -220,7 +220,7 @@ def test_get_user_options_early_quit_third_input(monkeypatch, capsys):
         mc.get_user_options(5)
 
 
-def test_get_user_options_early_quit_fifth_input(monkeypatch, capsys):
+def test_get_user_options_early_quit_fifth_input(monkeypatch):
     """Verify program stops when fifth input is 's'."""
     inputs = iter(
         ["Aap", "", "Noot", "Mies", "Wim", "s"]
@@ -293,7 +293,7 @@ def test_throw_dice_options_strings_and_numbers(capsys):
 
 
 # tests for quit_program()
-def test_quit_program(capsys):
+def test_quit_program():
     """Verify the program exits with a friendly message."""
     with pytest.raises(SystemExit) as e:
         mc.quit_program()
@@ -360,7 +360,7 @@ def test_main_happy_path(capsys, monkeypatch):
     assert "Het wordt: " in output
 
 
-def test_main_early_exit(capsys, monkeypatch):
+def test_main_early_exit(monkeypatch):
     """Verify main() exits when 's' is entered."""
     monkeypatch.setattr('builtins.input', lambda _: "s")
     with pytest.raises(SystemExit) as e:
