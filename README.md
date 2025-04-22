@@ -63,9 +63,6 @@ test_make_a_choice.py::test_throw_dice_lead
 test_make_a_choice.py::test_throw_dice_options_strings_and_numbers
 
 test_make_a_choice.py::test_quit_program
-
-test_make_a_choice.py::test_restart_yes
-test_make_a_choice.py::test_restart_no
 ```
 
 
