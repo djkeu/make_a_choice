@@ -267,27 +267,13 @@ def test_display_user_options_strings_and_numbers(capsys):
 
 
 # tests for throw_dice
-def test_throw_dice_heading_strings_and_numbers(capsys):
+def test_throw_dice_heading(capsys):
     """Verify heading is displayed."""
-    options = ["Aap", "2", "Mies"]
+    options = ["Aap", 2, "Mies"]
     make_a_choice.throw_dice(options)
 
     captured = capsys.readouterr()
     assert "\nHet wordt: " in captured.out
-
-
-def test_throw_dice_options_three_strings(capsys):
-    """Verify one random option of two strings is displayed."""
-    options = ["Aap", "Noot", "Mies"]
-    make_a_choice.throw_dice(options)
-
-    captured = capsys.readouterr()
-
-    counter = 0
-    for option in options:
-        if option in captured.out:
-            counter += 1
-    assert counter == 1
 
 
 def test_throw_dice_options_strings_and_numbers(capsys):
