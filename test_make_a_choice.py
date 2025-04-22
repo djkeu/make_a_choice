@@ -300,7 +300,9 @@ def test_quit_program(capsys):
 
 
 """
-ToDo: test quit_program
+ToDo: test restart()
+
+ToDo: test main()
 """
 
 
@@ -311,7 +313,7 @@ ToDo: test quit_program
 - get_user_options
 - display_user_options
 - throw_dice
-- ToDo: quit_program
+- quit_program
 - ToDo: restart
 - ToDo: main
 """
