@@ -93,7 +93,7 @@ def test_get_user_options_two_strings(monkeypatch):
 def test_get_user_options_four_numbers(monkeypatch):
     """Verify four numbers are collected and returned as a list of numbers."""
     inputs = iter(
-        [1, 2, 3, 4]
+        [1, 22, 3, 4]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
     result = mc.get_user_options(4)
