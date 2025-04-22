@@ -360,6 +360,6 @@ ToDo: test main()
 - display_user_options
 - throw_dice
 - quit_program
-- ToDo: restart
+- restart
 - ToDo: main
 """
