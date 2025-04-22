@@ -29,6 +29,7 @@ test_make_a_choice.py:
 
 ```
 $ pytest --collect-only -q
+
 test_make_a_choice.py::test_display_welcome_message
 
 test_make_a_choice.py::test_get_number_of_options_valid
