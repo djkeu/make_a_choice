@@ -7,6 +7,7 @@ Originally intended as a small Python program to help decide between various opt
 
 ## ToDo Section
 - FixMe: Fix docstrings if needed (explain why, not what)
+- ToDo: Remove abundant tests
 - Abandoned: translate prompts and prints into English
 - Abandoned: restart(): get messages from text file
 
