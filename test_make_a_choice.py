@@ -321,9 +321,14 @@ def test_restart_yes(monkeypatch, capsys):
     assert "Kun je weer niet kiezen" in captured.out
 
 
-def test_restart_no():
+def test_no_restart_char(monkeypatch):
     """Verify the program exits after input is not 'j'."""
-    pass
+    monkeypatch.setattr('builtins.input', lambda _: 'x')
+
+    with pytest.raises(SystemExit):
+        make_a_choice.restart()
+
+
 
 
 """
