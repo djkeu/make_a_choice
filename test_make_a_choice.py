@@ -280,7 +280,7 @@ def test_throw_dice_leading_text(capsys):
 
 def test_throw_dice_options_strings_and_numbers(capsys):
     """Verify one random option of 5 options is displayed."""
-    options = ["Aap", 2, "Mies", 4, "Zus"]
+    options = ["Aap", 2, "Mies", 44, "Zus"]
     mc.throw_dice(options)
 
     captured = capsys.readouterr()
