@@ -10,7 +10,7 @@ Also serves as an exercise in writing pytest tests.
 - ToDo: readme.md
 - ToDo: translate prompts and prints into English
 
-- ToDo: explanatory docstrings (explain why, not what)
+- ToDo: docstrings (explain why, not what)
     - Done: make_a_choice.py
     - ToDo: test_make_a_choice.py
         - Done: test_display_welcome_message
