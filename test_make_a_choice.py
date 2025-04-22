@@ -103,11 +103,11 @@ def test_get_user_options_four_numbers(monkeypatch):
 def test_get_user_options_strings_and_numbers(monkeypatch):
     """Verify numbers and strings are collected and returned as a list."""
     inputs = iter(
-        [1, "noot", "mies", 4, "zus"]
+        [1, "noot", "mies", 44, "zus"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
     result = mc.get_user_options(5)
-    assert result == [1, "noot", "mies", 4, "zus"]
+    assert result == [1, "noot", "mies", 44, "zus"]
 
 
 def test_get_user_options_empty_first(monkeypatch, capsys):
