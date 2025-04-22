@@ -299,6 +299,8 @@ def test_throw_dice_two_strings(capsys):
         "Noot" in captured.out
     )
 
+    # FixMe: use itertools?
+    
     # FixMe:
     result = make_a_choice.throw_dice(options)
     print(result)  # "\nHet wordt: Aap"
