@@ -267,8 +267,8 @@ def test_display_user_options_strings_and_numbers(capsys):
 
 
 # tests for throw_dice
-def test_throw_dice_heading(capsys):
-    """Verify heading is displayed."""
+def test_throw_dice_lead(capsys):
+    """Verify leading text is displayed."""
     options = ["Aap", 2, "Mies"]
     make_a_choice.throw_dice(options)
 
@@ -277,7 +277,7 @@ def test_throw_dice_heading(capsys):
 
 
 def test_throw_dice_options_strings_and_numbers(capsys):
-    """Verify one random option of two strings is displayed."""
+    """Verify one random option of 5 options is displayed."""
     options = ["Aap", 2, "Mies", 4, "Zus"]
     make_a_choice.throw_dice(options)
 
@@ -292,7 +292,7 @@ def test_throw_dice_options_strings_and_numbers(capsys):
 
 # tests for quit_program
 def test_quit_program(capsys):
-    """Verify the program is stopped with a goodbye message."""
+    """Verify the program exits with a goodbye message."""
     with pytest.raises(SystemExit) as e:
         make_a_choice.quit_program()
 
