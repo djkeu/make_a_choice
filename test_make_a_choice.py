@@ -291,9 +291,7 @@ def test_throw_dice_options_strings_and_numbers(capsys):
 
 
 """
-ToDo: tests throw_dice
-    - ToDo: "\nHet wordt: "
-    - ToDo: list[0] or list[1] or list[x]
+ToDo: test quit_program
 """
 
 
@@ -303,7 +301,7 @@ ToDo: tests throw_dice
 - get_number_of_options
 - get_user_options
 - display_user_options
-- ToDo: throw_dice
+- throw_dice
 - ToDo: quit_program
 - ToDo: restart
 - ToDo: main
