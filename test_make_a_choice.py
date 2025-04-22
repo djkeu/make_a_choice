@@ -370,21 +370,3 @@ def test_main_early_exit(capsys, monkeypatch):
     with pytest.raises(SystemExit) as e:
         make_a_choice.main()
     assert "Laters!" in str(e.value)
-
-
-"""
-ToDo: test main()
-"""
-
-
-# Functions to test in make_a_choice.py:
-"""
-- display_welcome_message
-- get_number_of_options
-- get_user_options
-- display_user_options
-- throw_dice
-- quit_program
-- restart
-- ToDo: main
-"""
