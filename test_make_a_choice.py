@@ -317,6 +317,11 @@ def test_restart_no():
     pass
 
 
+def test_get_number_of_options_early_exit():
+    """Verify the program exits after input of 's'."""
+    pass
+
+
 """
 ToDo: get_number_of_options()
     - ToDo: 's': quit_program()
