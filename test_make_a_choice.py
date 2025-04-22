@@ -325,6 +325,7 @@ def test_get_number_of_options_early_exit():
 """
 ToDo: get_number_of_options()
     - ToDo: 's': quit_program()
+    - ToDo: move to correct section
 
 ToDo: test restart()
     - Done: test_restart_yes()
