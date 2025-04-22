@@ -28,8 +28,7 @@ Also serves as an exercise in writing pytest tests.
 test_make_a_choice.py:
 
 ```
-$ pytest --lf --collect-only -q
-
+$ pytest --collect-only -q
 test_make_a_choice.py::test_display_welcome_message
 
 test_make_a_choice.py::test_get_number_of_options_valid
@@ -57,7 +56,15 @@ test_make_a_choice.py::test_get_user_options_early_quit_fifth_input
 
 test_make_a_choice.py::test_display_user_options_strings
 test_make_a_choice.py::test_display_user_options_numbers
-test_make_a_choice.py::test_display_user_options_mixed
+test_make_a_choice.py::test_display_user_options_strings_and_numbers
+
+test_make_a_choice.py::test_throw_dice_lead
+test_make_a_choice.py::test_throw_dice_options_strings_and_numbers
+
+test_make_a_choice.py::test_quit_program
+
+test_make_a_choice.py::test_restart_yes
+test_make_a_choice.py::test_restart_no
 ```
 
 
