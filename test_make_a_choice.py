@@ -292,7 +292,7 @@ def test_throw_dice_options_strings_and_numbers(capsys):
 
 # tests for quit_program
 def test_quit_program(capsys):
-    """Verify the program exits with a goodbye message."""
+    """Verify the program exits with a friendly message."""
     with pytest.raises(SystemExit) as e:
         make_a_choice.quit_program()
 
