@@ -206,8 +206,6 @@ def test_get_user_options_early_quit_first_input(monkeypatch, capsys):
     with pytest.raises(SystemExit):
         mc.get_user_options(5)
 
-    # Note: no assertion! that's done in test_quit_program()
-
 
 def test_get_user_options_early_quit_third_input(monkeypatch, capsys):
     """Verify program stops when third input is 's'."""
