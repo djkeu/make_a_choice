@@ -364,6 +364,14 @@ def test_main_happy_path(capsys, monkeypatch):
     assert "Het wordt: " in output
 
 
+def test_main_early_exit(capsys, monkeypatch):
+    """Verify main() exits when 's' is entered."""
+    monkeypatch.setattr('builtins.input', lambda _: "s")
+    with pytest.raises(SystemExit) as e:
+        make_a_choice.main()
+    assert "Laters!" in str(e.value)
+
+
 """
 ToDo: test main()
 """
