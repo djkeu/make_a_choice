@@ -267,50 +267,41 @@ def test_display_user_options_mixed(capsys):
 
 
 # tests for throw_dice
-def test_throw_dice_heading(capsys):
+def test_throw_dice_heading_strings_and_numbers(capsys):
     """Verify heading is displayed."""
-    options = ["Aap", "Noot"]
+    options = ["Aap", "2", "Mies"]
     make_a_choice.throw_dice(options)
 
     captured = capsys.readouterr()
     assert "\nHet wordt: " in captured.out
 
 
-def test_throw_dice_two_strings(capsys):
+def test_throw_dice_options_three_strings(capsys):
     """Verify one random option of two strings is displayed."""
-    options = ["Aap", "Noot"]
+    options = ["Aap", "Noot", "Mies"]
     make_a_choice.throw_dice(options)
 
     captured = capsys.readouterr()
-    assert (
-        options[0] in captured.out or
-        options[1] in captured.out    
-    )
-    assert not (
-        options[0] in captured.out and
-        options[1] in captured.out    
-    )
-    assert (
-        "Aap" in captured.out or
-        "Noot" in captured.out
-    )
-    assert not (
-        "Aap" in captured.out and
-        "Noot" in captured.out
-    )
 
-    # FixMe: use itertools?
+    counter = 0
+    for option in options:
+        if option in captured.out:
+            counter += 1
+    assert counter == 1
 
-    # FixMe:
-    # result = make_a_choice.throw_dice(options)
-    # print(result)  # "\nHet wordt: Aap"
-    # FixMe:
-    # assert len(result) == 1
 
-    # FixMe:
-    # assert sum(options[0] in captured.out, options[1] in captured.out) == 1
+def test_throw_dice_options_strings_and_numbers(capsys):
+    """Verify one random option of two strings is displayed."""
+    options = ["Aap", 2, "Mies", 4, "Zus"]
+    make_a_choice.throw_dice(options)
 
-    # FixMe: use sum(conditions) == 1 to check only one condition is true
+    captured = capsys.readouterr()
+
+    counter = 0
+    for option in options:
+        if str(option) in captured.out:
+            counter += 1
+    assert counter == 1
 
 
 """
