@@ -354,7 +354,7 @@ def test_main_happy_path(capsys, monkeypatch):
 
     captured = capsys.readouterr()
     output = captured.out
-    
+
     assert "Kun je weer niet" in output
     assert "1 - " in output and "2 - " in output
     assert "Het wordt: " in output
