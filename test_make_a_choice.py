@@ -311,6 +311,8 @@ def test_restart_no():
 
 """
 ToDo: test restart()
+    - ToDo: test_restart_yes()
+    - ToDo: test_restart_no()
 
 ToDo: test main()
 """
