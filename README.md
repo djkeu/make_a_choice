@@ -18,8 +18,8 @@ Also serves as an exercise in writing pytest tests.
         - Done: test_get_user_options
         - Done: test_display_user_options
         - Done: test_throw_dice
+        - Done: test_quit_program
 
-        - ToDo: test_quit_program
         - ToDo: test_restart
         - ToDo: test_main
 
