@@ -59,7 +59,7 @@ def get_user_options(num_options):
 
 
 def display_user_options(options_list):
-    """Display a list of the options presented by the user."""
+    """Display the list of options presented by the user."""
     print("\nDe door u gekozen opties zijn:")
     for item in options_list:
         print(f"{options_list.index(item) + 1} - {item}")
