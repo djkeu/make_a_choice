@@ -252,7 +252,7 @@ def test_display_user_options_numbers(capsys):
     assert "3 - 30" in captured.out
 
 
-def test_display_user_options_mixed(capsys):
+def test_display_user_options_strings_and_numbers(capsys):
     """Verify a list of strings and numbers is displayed correctly."""
     options = ["Aap", 20, "Mies", 40, "Zus"]
     make_a_choice.display_user_options(options)
