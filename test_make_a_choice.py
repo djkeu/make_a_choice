@@ -346,6 +346,23 @@ def test_no_restart_number(monkeypatch):
         make_a_choice.restart()
 
 
+def test_main_happy_path(capsys, monkeypatch):
+    """Verify main() runs the full workflow with expected output."""
+    inputs = iter(
+        ["2", "Aap", "Noot", "n"]
+    )
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    with pytest.raises(SystemExit):
+        make_a_choice.main()
+
+    captured = capsys.readouterr()
+    output = captured.out
+    
+    assert "Kun je weer niet" in output
+    assert "1 - " in output and "2 - " in output
+    assert "Het wordt: " in output
+
 
 """
 ToDo: test main()
