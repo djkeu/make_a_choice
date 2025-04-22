@@ -299,6 +299,16 @@ def test_quit_program(capsys):
     assert "Laters!" in str(e.value)
 
 
+def test_restart_yes():
+    """Verify the program is restarted after input of 'j'."""
+    pass
+
+
+def test_restart_no():
+    """Verify the program exits after input is not 'j'."""
+    pass
+
+
 """
 ToDo: test restart()
 
