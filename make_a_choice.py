@@ -11,7 +11,7 @@ def display_welcome_message():
     print(message)
 
 
-def get_number_of_options():
+def _get_number_of_options():
     """Prompt user for the number of options to choose from (2 to 5)."""
     err = "Kies een getal tussen 2 en 5."
 
@@ -20,7 +20,7 @@ def get_number_of_options():
             "Hoeveel opties wil je vergelijken? (max 5): "
         )
         if num_options == 's':
-            quit_program()
+            _quit_program()
         try:
             num_options = int(num_options)
 
@@ -33,7 +33,7 @@ def get_number_of_options():
             print(err)
 
 
-def get_user_options(num_options):
+def _get_user_options(num_options):
     """Make a list of the options presented by the user."""
     user_options = []
 
@@ -45,7 +45,7 @@ def get_user_options(num_options):
             option = input(f"Optie {i}: ")
 
         if option == 's':
-            quit_program()
+            _quit_program()
         elif option == '' and len(user_options) > 1:
             break
         elif option == '':
@@ -73,7 +73,7 @@ def throw_dice(options_list):
     print(f"\nHet wordt: {options_list[i]}")
 
 
-def quit_program():
+def _quit_program():
     """Quit the program gracefully."""
     sys.exit("Laters!")
 
@@ -85,15 +85,15 @@ def restart():
     if prompt == 'j':
         main()
     else:
-        quit_program()
+        _quit_program()
 
 
 def main():
     """Main function to run the program."""
     display_welcome_message()
 
-    num_options = get_number_of_options()
-    user_options = get_user_options(num_options)
+    num_options = _get_number_of_options()
+    user_options = _get_user_options(num_options)
 
     display_user_options(user_options)
     throw_dice(user_options)

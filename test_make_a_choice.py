@@ -17,10 +17,10 @@ def test_display_welcome_message(capsys):
 def test_get_number_of_options_valid(monkeypatch):
     """Verify the number of options can be between 2 and 5."""
     monkeypatch.setattr('builtins.input', lambda _: "2")
-    assert mc.get_number_of_options() == 2
+    assert mc._get_number_of_options() == 2
 
     monkeypatch.setattr('builtins.input', lambda _: "5")
-    assert mc.get_number_of_options() == 5
+    assert mc._get_number_of_options() == 5
 
 
 def test_get_number_of_options_early_exit(monkeypatch):
@@ -28,7 +28,7 @@ def test_get_number_of_options_early_exit(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: 's')
 
     with pytest.raises(SystemExit):
-        mc.get_number_of_options()
+        mc._get_number_of_options()
 
 
 def test_get_number_of_options_non_numerics(monkeypatch, capsys):
@@ -36,7 +36,7 @@ def test_get_number_of_options_non_numerics(monkeypatch, capsys):
     inputs = iter(["abc", "u", "4"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_number_of_options()
+    result = mc._get_number_of_options()
 
     captured = capsys.readouterr()
     assert "Kies een getal tussen 2 en 5" in captured.out
@@ -48,7 +48,7 @@ def test_get_number_of_options_negative_numbers(monkeypatch, capsys):
     inputs = iter(["-5", "-1", "2"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_number_of_options()
+    result = mc._get_number_of_options()
 
     captured = capsys.readouterr()
     assert "Kies een getal tussen 2 en 5" in captured.out
@@ -60,7 +60,7 @@ def test_get_number_of_options_too_small_numbers(monkeypatch, capsys):
     inputs = iter(["0", "1", "3"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_number_of_options()
+    result = mc._get_number_of_options()
 
     captured = capsys.readouterr()
     assert "Kies een getal tussen 2 en 5" in captured.out
@@ -72,7 +72,7 @@ def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
     inputs = iter(["6", "10", "4"])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_number_of_options()
+    result = mc._get_number_of_options()
 
     captured = capsys.readouterr()
     assert "Kies een getal tussen 2 en 5" in captured.out
@@ -86,7 +86,7 @@ def test_get_user_options_two_strings(monkeypatch):
         ["Aap", "Noot"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    result = mc.get_user_options(2)
+    result = mc._get_user_options(2)
     assert result == ["Aap", "Noot"]
 
 
@@ -96,7 +96,7 @@ def test_get_user_options_four_numbers(monkeypatch):
         [1, 22, 3, 4]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    result = mc.get_user_options(4)
+    result = mc._get_user_options(4)
     assert result == [1, 22, 3, 4]
 
 
@@ -106,7 +106,7 @@ def test_get_user_options_strings_and_numbers(monkeypatch):
         [1, "noot", "mies", 44, "zus"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    result = mc.get_user_options(5)
+    result = mc._get_user_options(5)
     assert result == [1, "noot", "mies", 44, "zus"]
 
 
@@ -118,7 +118,7 @@ def test_get_user_options_empty_first(monkeypatch, capsys):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     with pytest.raises(SystemExit):
-        mc.get_user_options(5)
+        mc._get_user_options(5)
 
     captured = capsys.readouterr()
     assert "Noem minstens " in captured.out
@@ -131,7 +131,7 @@ def test_get_user_options_empty_first_valid_later(monkeypatch, capsys):
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_user_options(2)
+    result = mc._get_user_options(2)
     captured = capsys.readouterr()
 
     assert "Noem minstens twee opties" in captured.out
@@ -146,7 +146,7 @@ def test_get_user_options_empty_second(monkeypatch, capsys):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     with pytest.raises(SystemExit):
-        mc.get_user_options(5)
+        mc._get_user_options(5)
 
     captured = capsys.readouterr()
     assert "Noem minstens twee opties" in captured.out
@@ -159,7 +159,7 @@ def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_user_options(3)
+    result = mc._get_user_options(3)
     captured = capsys.readouterr()
 
     assert result == ["Aap", "Noot", "Mies"]
@@ -173,7 +173,7 @@ def test_get_user_options_two_of_three(monkeypatch):
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_user_options(3)
+    result = mc._get_user_options(3)
     assert result == ["Aap", "Noot"]
 
 
@@ -184,7 +184,7 @@ def test_get_user_options_two_of_five(monkeypatch):
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_user_options(5)
+    result = mc._get_user_options(5)
     assert result == ["Aap", "Mies"]
 
 
@@ -195,7 +195,7 @@ def test_get_user_options_three_of_five(monkeypatch):
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    result = mc.get_user_options(5)
+    result = mc._get_user_options(5)
     assert result == ["Aap", "Noot", "Mies"]
 
 
@@ -204,7 +204,7 @@ def test_get_user_options_early_quit_first_input(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: "s")
 
     with pytest.raises(SystemExit) as e:
-        mc.get_user_options(5)
+        mc._get_user_options(5)
 
     assert "Laters" in str(e.value)
 
@@ -217,7 +217,7 @@ def test_get_user_options_early_quit_third_input(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     with pytest.raises(SystemExit):
-        mc.get_user_options(5)
+        mc._get_user_options(5)
 
 
 def test_get_user_options_early_quit_fifth_input(monkeypatch):
@@ -228,7 +228,7 @@ def test_get_user_options_early_quit_fifth_input(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     with pytest.raises(SystemExit):
-        mc.get_user_options(5)
+        mc._get_user_options(5)
 
 
 # tests for display_user_options()
@@ -296,7 +296,7 @@ def test_throw_dice_options_strings_and_numbers(capsys):
 def test_quit_program():
     """Verify the program exits with a friendly message."""
     with pytest.raises(SystemExit) as e:
-        mc.quit_program()
+        mc._quit_program()
 
     assert "Laters!" in str(e.value)
 
