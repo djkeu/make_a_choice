@@ -70,7 +70,7 @@ def throw_dice(options_list):
     throw = randint(2, 12)
     i = round((throw / 12) * (len(options_list) - 1))
 
-    print(f"\nHet wordt: {options_list[i]}")
+    print(f"\nFinal verdict: {options_list[i]}")
 
 
 def _quit_program():

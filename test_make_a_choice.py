@@ -275,7 +275,7 @@ def test_throw_dice_leading_text(capsys):
     mc.throw_dice(options)
 
     captured = capsys.readouterr()
-    assert "\nHet wordt: " in captured.out
+    assert "\nFinal verdict: " in captured.out
 
 
 def test_throw_dice_options_strings_and_numbers(capsys):
@@ -357,7 +357,7 @@ def test_main_happy_path(capsys, monkeypatch):
 
     assert "Having trouble" in output
     assert "1 - " in output and "2 - " in output
-    assert "Het wordt: " in output
+    assert "Final verdict: " in output
 
 
 def test_main_early_exit(monkeypatch):
