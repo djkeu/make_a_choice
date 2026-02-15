@@ -13,11 +13,11 @@ def display_welcome_message():
 
 def _get_number_of_options():
     """Prompt user for the number of options to choose from (2 to 5)."""
-    err = "Kies een getal tussen 2 en 5."
+    err = "Please pick a number between 2 and 5."
 
     while True:
         num_options = input(
-            "Hoeveel opties wil je vergelijken? (max 5): "
+            "How many options do you want to compare? (max 5): "
         )
         if num_options == 's':
             _quit_program()

@@ -39,7 +39,7 @@ def test_get_number_of_options_non_numerics(monkeypatch, capsys):
     result = mc._get_number_of_options()
 
     captured = capsys.readouterr()
-    assert "Kies een getal tussen 2 en 5" in captured.out
+    assert "Please pick a number between 2 and 5." in captured.out
     assert result == 4
 
 
@@ -51,7 +51,7 @@ def test_get_number_of_options_negative_numbers(monkeypatch, capsys):
     result = mc._get_number_of_options()
 
     captured = capsys.readouterr()
-    assert "Kies een getal tussen 2 en 5" in captured.out
+    assert "Please pick a number between 2 and 5." in captured.out
     assert result == 2
 
 
@@ -63,7 +63,7 @@ def test_get_number_of_options_too_small_numbers(monkeypatch, capsys):
     result = mc._get_number_of_options()
 
     captured = capsys.readouterr()
-    assert "Kies een getal tussen 2 en 5" in captured.out
+    assert "Please pick a number between 2 and 5." in captured.out
     assert result == 3
 
 
@@ -75,7 +75,7 @@ def test_get_number_of_options_too_large_numbers(monkeypatch, capsys):
     result = mc._get_number_of_options()
 
     captured = capsys.readouterr()
-    assert "Kies een getal tussen 2 en 5" in captured.out
+    assert "Please pick a number between 2 and 5." in captured.out
     assert result == 4
 
 
