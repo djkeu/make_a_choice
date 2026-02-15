@@ -8,8 +8,8 @@ def test_display_welcome_message(capsys):
     mc.display_welcome_message()
     captured = capsys.readouterr()
     assert (
-        "Kun je weer niet kiezen? "
-        "Laat dit programma die moeilijke keuze voor je maken."
+        "Having trouble making the right choice? "
+        "Let this program help you by making that dificult decision for you."
     ) in captured.out
 
 
@@ -313,7 +313,7 @@ def test_restart_yes(monkeypatch, capsys):
         mc.restart()
 
     captured = capsys.readouterr()
-    assert "Kun je weer niet kiezen" in captured.out
+    assert "Having trouble making the right choice?" in captured.out
 
 
 def test_no_restart_char(monkeypatch):
@@ -355,7 +355,7 @@ def test_main_happy_path(capsys, monkeypatch):
     captured = capsys.readouterr()
     output = captured.out
 
-    assert "Kun je weer niet" in output
+    assert "Having trouble" in output
     assert "1 - " in output and "2 - " in output
     assert "Het wordt: " in output
 
