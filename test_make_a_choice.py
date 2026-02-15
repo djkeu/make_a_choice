@@ -113,7 +113,7 @@ def test_get_user_options_strings_and_numbers(monkeypatch):
 def test_get_user_options_empty_first(monkeypatch, capsys):
     """Verify empty first input gets rejected."""
     inputs = iter(
-        ["", "s"]
+        ["", "q"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
@@ -121,7 +121,7 @@ def test_get_user_options_empty_first(monkeypatch, capsys):
         mc._get_user_options(5)
 
     captured = capsys.readouterr()
-    assert "Noem minstens " in captured.out
+    assert "Enter at least " in captured.out
 
 
 def test_get_user_options_empty_first_valid_later(monkeypatch, capsys):
@@ -134,14 +134,14 @@ def test_get_user_options_empty_first_valid_later(monkeypatch, capsys):
     result = mc._get_user_options(2)
     captured = capsys.readouterr()
 
-    assert "Noem minstens twee opties" in captured.out
+    assert "Enter at least 2 options" in captured.out
     assert result == ["Aap", "Noot"]
 
 
 def test_get_user_options_empty_second(monkeypatch, capsys):
     """Verify empty second input gets rejected."""
     inputs = iter(
-        ["4", "", "s"]
+        ["4", "", "q"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
@@ -149,7 +149,7 @@ def test_get_user_options_empty_second(monkeypatch, capsys):
         mc._get_user_options(5)
 
     captured = capsys.readouterr()
-    assert "Noem minstens twee opties" in captured.out
+    assert "Enter at least 2 options" in captured.out
 
 
 def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
@@ -163,7 +163,7 @@ def test_get_user_options_empty_second_valid_later(monkeypatch, capsys):
     captured = capsys.readouterr()
 
     assert result == ["Aap", "Noot", "Mies"]
-    assert "Noem minstens" in captured.out
+    assert "Enter at least" in captured.out
 
 
 def test_get_user_options_two_of_three(monkeypatch):
@@ -201,7 +201,7 @@ def test_get_user_options_three_of_five(monkeypatch):
 
 def test_get_user_options_early_quit_first_input(monkeypatch):
     """Verify program stops when first input is 's'."""
-    monkeypatch.setattr('builtins.input', lambda _: "s")
+    monkeypatch.setattr('builtins.input', lambda _: "q")
 
     with pytest.raises(SystemExit) as e:
         mc._get_user_options(5)
@@ -212,7 +212,7 @@ def test_get_user_options_early_quit_first_input(monkeypatch):
 def test_get_user_options_early_quit_third_input(monkeypatch):
     """Verify program stops when third input is 's'."""
     inputs = iter(
-        ["Aap", "Noot", "s"]
+        ["Aap", "Noot", "q"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
@@ -223,7 +223,7 @@ def test_get_user_options_early_quit_third_input(monkeypatch):
 def test_get_user_options_early_quit_fifth_input(monkeypatch):
     """Verify program stops when fifth input is 's'."""
     inputs = iter(
-        ["Aap", "", "Noot", "Mies", "Wim", "s"]
+        ["Aap", "", "Noot", "Mies", "Wim", "q"]
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 

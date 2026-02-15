@@ -40,16 +40,16 @@ def _get_user_options(num_options):
     i = 1
     while len(user_options) < num_options:
         if i == 1:
-            option = input(f"Optie {i} ('s' om te stoppen): ")
+            option = input(f"Option {i} ('q' to quit): ")
         else:
-            option = input(f"Optie {i}: ")
+            option = input(f"Option {i}: ")
 
-        if option == 's':
+        if option == 'q':
             _quit_program()
         elif option == '' and len(user_options) > 1:
             break
         elif option == '':
-            print("Noem minstens twee opties")
+            print("Enter at least 2 options")
             continue
 
         user_options.append(option)
