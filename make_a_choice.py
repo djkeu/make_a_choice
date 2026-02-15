@@ -19,7 +19,7 @@ def _get_number_of_options():
         num_options = input(
             "How many options do you want to compare? (max 5): "
         )
-        if num_options == 's':
+        if num_options == 'q':
             _quit_program()
         try:
             num_options = int(num_options)
@@ -80,9 +80,9 @@ def _quit_program():
 
 def restart():
     """In case the user wants to try again."""
-    prompt = input("Nog een keer proberen? (j/n) ")
+    prompt = input("Try again? (y/n) ")
 
-    if prompt == 'j':
+    if prompt == 'y':
         main()
     else:
         _quit_program()

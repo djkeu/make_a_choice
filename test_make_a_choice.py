@@ -24,8 +24,8 @@ def test_get_number_of_options_valid(monkeypatch):
 
 
 def test_get_number_of_options_early_exit(monkeypatch):
-    """Verify the program exits after input of 's'."""
-    monkeypatch.setattr('builtins.input', lambda _: 's')
+    """Verify the program exits after input of 'q'."""
+    monkeypatch.setattr('builtins.input', lambda _: 'q')
 
     with pytest.raises(SystemExit):
         mc._get_number_of_options()
@@ -210,7 +210,7 @@ def test_get_user_options_early_quit_first_input(monkeypatch):
 
 
 def test_get_user_options_early_quit_third_input(monkeypatch):
-    """Verify program stops when third input is 's'."""
+    """Verify program stops when third input is 'q'."""
     inputs = iter(
         ["Aap", "Noot", "q"]
     )
@@ -221,7 +221,7 @@ def test_get_user_options_early_quit_third_input(monkeypatch):
 
 
 def test_get_user_options_early_quit_fifth_input(monkeypatch):
-    """Verify program stops when fifth input is 's'."""
+    """Verify program stops when fifth input is 'q'."""
     inputs = iter(
         ["Aap", "", "Noot", "Mies", "Wim", "q"]
     )
@@ -303,9 +303,9 @@ def test_quit_program():
 
 # tests for restart()
 def test_restart_yes(monkeypatch, capsys):
-    """Verify the program is restarted after input of 'j'."""
+    """Verify the program is restarted after input of 'y'."""
     inputs = iter(
-        ['j', 's']
+        ['y', 'q']
     )
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
@@ -362,7 +362,7 @@ def test_main_happy_path(capsys, monkeypatch):
 
 def test_main_early_exit(monkeypatch):
     """Verify main() exits when 's' is entered."""
-    monkeypatch.setattr('builtins.input', lambda _: "s")
+    monkeypatch.setattr('builtins.input', lambda _: "q")
     with pytest.raises(SystemExit) as e:
         mc.main()
     assert "Later!" in str(e.value)
