@@ -80,22 +80,21 @@ def restart():
     """In case the user wants to try again."""
     prompt = input("Try again? (y/n) ")
 
-    if prompt == 'y':
-        main()
-    else:
+    if prompt != 'y':
         _quit_program()
 
 
 def main():
     """Main function to run the program."""
-    display_welcome_message()
+    while True:
+        display_welcome_message()
 
-    num_options = _get_number_of_options()
-    user_options = _get_user_options(num_options)
+        num_options = _get_number_of_options()
+        user_options = _get_user_options(num_options)
+        display_user_options(user_options)
+        get_random_index(user_options)
 
-    display_user_options(user_options)
-    get_random_index(user_options)
-    restart()
+        restart()
 
 
 if __name__ == "__main__":
