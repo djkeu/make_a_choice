@@ -268,20 +268,20 @@ def test_display_user_options_strings_and_numbers(capsys):
     assert "5 - Zus" in captured.out
 
 
-# tests for throw_dice()
-def test_throw_dice_leading_text(capsys):
+# tests for get_random_index()
+def test_get_random_index_leading_text(capsys):
     """Verify leading text is displayed."""
     options = ["Aap", 2, "Mies"]
-    mc.throw_dice(options)
+    mc.get_random_index(options)
 
     captured = capsys.readouterr()
     assert "\nFinal verdict: " in captured.out
 
 
-def test_throw_dice_options_strings_and_numbers(capsys):
+def test_get_random_index_options_strings_and_numbers(capsys):
     """Verify one random option of 5 options is displayed."""
     options = ["Aap", 2, "Mies", 44, "Zus"]
-    mc.throw_dice(options)
+    mc.get_random_index(options)
 
     captured = capsys.readouterr()
 

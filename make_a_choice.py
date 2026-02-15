@@ -65,11 +65,9 @@ def display_user_options(options_list):
         print(f"{options_list.index(item) + 1} - {item}")
 
 
-def throw_dice(options_list):
-    """Throw 2 six-sided dices to determine the final choice."""
-    throw = randint(2, 12)
-    i = round((throw / 12) * (len(options_list) - 1))
-
+def get_random_index(options_list):
+    """Create a random index to choose a random option."""
+    i = randint(0, len(options_list) - 1)
     print(f"\nFinal verdict: {options_list[i]}")
 
 
@@ -96,7 +94,7 @@ def main():
     user_options = _get_user_options(num_options)
 
     display_user_options(user_options)
-    throw_dice(user_options)
+    get_random_index(user_options)
     restart()
 
 
