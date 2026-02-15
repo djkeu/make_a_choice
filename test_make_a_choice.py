@@ -238,7 +238,7 @@ def test_display_user_options_strings(capsys):
     mc.display_user_options(options)
 
     captured = capsys.readouterr()
-    assert "De door u" in captured.out
+    assert "You have chosen" in captured.out
     assert "1 - Aap" in captured.out
     assert "3 - Mies" in captured.out
 
@@ -249,7 +249,7 @@ def test_display_user_options_numbers(capsys):
     mc.display_user_options(options)
 
     captured = capsys.readouterr()
-    assert "\nDe door u gekozen opties zijn:" in captured.out
+    assert "\nYou have chosen:" in captured.out
     assert "1 - 10" in captured.out
     assert "3 - 30" in captured.out
 
@@ -260,7 +260,7 @@ def test_display_user_options_strings_and_numbers(capsys):
     mc.display_user_options(options)
 
     captured = capsys.readouterr()
-    assert "\nDe door u gekozen opties zijn:" in captured.out
+    assert "\nYou have chosen:" in captured.out
     assert "1 - Aap" in captured.out
     assert "2 - 20" in captured.out
     assert "3 - Mies" in captured.out
