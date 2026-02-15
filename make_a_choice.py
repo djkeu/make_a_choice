@@ -75,7 +75,7 @@ def throw_dice(options_list):
 
 def _quit_program():
     """Quit the program gracefully."""
-    sys.exit("Laters!")
+    sys.exit("Later!")
 
 
 def restart():

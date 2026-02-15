@@ -206,7 +206,7 @@ def test_get_user_options_early_quit_first_input(monkeypatch):
     with pytest.raises(SystemExit) as e:
         mc._get_user_options(5)
 
-    assert "Laters" in str(e.value)
+    assert "Later" in str(e.value)
 
 
 def test_get_user_options_early_quit_third_input(monkeypatch):
@@ -298,7 +298,7 @@ def test_quit_program():
     with pytest.raises(SystemExit) as e:
         mc._quit_program()
 
-    assert "Laters!" in str(e.value)
+    assert "Later!" in str(e.value)
 
 
 # tests for restart()
@@ -365,4 +365,4 @@ def test_main_early_exit(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: "s")
     with pytest.raises(SystemExit) as e:
         mc.main()
-    assert "Laters!" in str(e.value)
+    assert "Later!" in str(e.value)
