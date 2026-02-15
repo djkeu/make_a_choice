@@ -317,7 +317,7 @@ def test_restart_yes(monkeypatch, capsys):
 
 
 def test_no_restart_char(monkeypatch):
-    """Verify the program exits after input is a char not 'j'."""
+    """Verify the program exits after input is a char not 'y'."""
     monkeypatch.setattr('builtins.input', lambda _: 'x')
     with pytest.raises(SystemExit):
         mc.restart()
