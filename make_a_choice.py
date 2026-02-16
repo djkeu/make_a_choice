@@ -11,7 +11,7 @@ def display_welcome_message():
     print(message)
 
 
-def _get_number_of_options():
+def get_number_of_options():
     """Prompt user for the number of options to choose from (2 to 5)."""
     err = "Please pick a number between 2 and 5."
 
@@ -20,7 +20,7 @@ def _get_number_of_options():
             "How many options do you want to compare? (max 5): "
         )
         if num_options == 'q':
-            _quit_program()
+            quit_program()
         try:
             num_options = int(num_options)
 
@@ -33,7 +33,7 @@ def _get_number_of_options():
             print(err)
 
 
-def _get_user_options(num_options):
+def get_user_options(num_options):
     """Make a list of the options presented by the user."""
     user_options = []
     i = 1
@@ -45,7 +45,7 @@ def _get_user_options(num_options):
             option = input(f"Option {i}: ")
 
         if option == 'q':
-            _quit_program()
+            quit_program()
         
         if option == '':
             if len(user_options) < 2:
@@ -73,7 +73,7 @@ def get_random_index(options_list):
     print(f"\nFinal verdict: {options_list[i]}")
 
 
-def _quit_program():
+def quit_program():
     """Quit the program gracefully."""
     sys.exit("Later!")
 
@@ -83,7 +83,7 @@ def restart():
     prompt = input("Try again? (y/n) ")
 
     if prompt != 'y':
-        _quit_program()
+        quit_program()
 
 
 def main():
@@ -91,8 +91,8 @@ def main():
     while True:
         display_welcome_message()
 
-        option_count = _get_number_of_options()
-        chosen_options = _get_user_options(option_count)
+        option_count = get_number_of_options()
+        chosen_options = get_user_options(option_count)
 
         display_user_options(chosen_options)
         get_random_index(chosen_options)
