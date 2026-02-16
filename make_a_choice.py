@@ -36,8 +36,8 @@ def _get_number_of_options():
 def _get_user_options(num_options):
     """Make a list of the options presented by the user."""
     user_options = []
-
     i = 1
+    
     while len(user_options) < num_options:
         if i == 1:
             option = input(f"Option {i} ('q' to quit): ")
@@ -46,12 +46,14 @@ def _get_user_options(num_options):
 
         if option == 'q':
             _quit_program()
-        elif option == '' and len(user_options) > 1:
-            break
-        elif option == '':
-            print("Enter at least 2 options")
-            continue
-
+        
+        if option == '':
+            if len(user_options) < 2:
+                print("Enter at least 2 options")
+                continue
+            else:
+                break
+        
         user_options.append(option)
         i += 1
 
@@ -89,10 +91,11 @@ def main():
     while True:
         display_welcome_message()
 
-        num_options = _get_number_of_options()
-        user_options = _get_user_options(num_options)
-        display_user_options(user_options)
-        get_random_index(user_options)
+        option_count = _get_number_of_options()
+        chosen_options = _get_user_options(option_count)
+
+        display_user_options(chosen_options)
+        get_random_index(chosen_options)
 
         restart()
 

@@ -200,13 +200,13 @@ def test_get_user_options_three_of_five(monkeypatch):
 
 
 def test_get_user_options_early_quit_first_input(monkeypatch):
-    """Verify program stops when first input is 's'."""
+    """Verify program stops when first input is 'q'."""
     monkeypatch.setattr('builtins.input', lambda _: "q")
 
     with pytest.raises(SystemExit) as e:
         mc._get_user_options(5)
 
-    assert "Later" in str(e.value)
+    assert "Later!" in str(e.value)
 
 
 def test_get_user_options_early_quit_third_input(monkeypatch):
@@ -361,7 +361,7 @@ def test_main_happy_path(capsys, monkeypatch):
 
 
 def test_main_early_exit(monkeypatch):
-    """Verify main() exits when 's' is entered."""
+    """Verify main() exits when 'q' is entered."""
     monkeypatch.setattr('builtins.input', lambda _: "q")
     with pytest.raises(SystemExit) as e:
         mc.main()
