@@ -9,7 +9,7 @@ def test_display_welcome_message(capsys):
     captured = capsys.readouterr()
     assert (
         "Having trouble making the right choice? "
-        "Let this program help you by making that dificult decision for you."
+        "Let this program help you by making that difficult decision for you."
     ) in captured.out
 
 

@@ -6,7 +6,7 @@ def display_welcome_message():
     """Greet the user with a friendly welcome message."""
     message = (
         "\nHaving trouble making the right choice? "
-        "Let this program help you by making that dificult decision for you."
+        "Let this program help you by making that difficult decision for you."
     )
     print(message)
 
