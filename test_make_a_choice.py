@@ -310,7 +310,7 @@ def test_restart_yes(monkeypatch, capsys):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     with pytest.raises(SystemExit):
-        mc.restart()
+        mc.main()
 
     captured = capsys.readouterr()
     assert "Having trouble making the right choice?" in captured.out
